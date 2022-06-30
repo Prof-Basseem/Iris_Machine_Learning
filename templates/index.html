@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--  link bootstrap css -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<!--  link css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Home</title>
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="{{ url_for('home') }}">Iris Machine Learning</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- form of iris machine learning -->
+    <div class="container">
+        <h1>Iris Machine Learning</h1>
+        <form action="{{ url_for('predict') }}" method="post">
+            <div class="form-group">
+                <label for="sepal_length">Sepal Length</label>
+                <input type="text" class="form-control" id="sepal_length" name="sepal_length" placeholder="Sepal Length">
+            </div>
+            <div class="form-group">
+                <label for="sepal_width">Sepal Width</label>
+                <input type="text" class="form-control" id="sepal_width" name="sepal_width" placeholder="Sepal Width">
+            </div>
+            <div class="form-group">
+                <label for="petal_length">Petal Length</label>
+                <input type="text" class="form-control" id="petal_length" name="petal_length" placeholder="Petal Length">
+            </div>
+            <div class="form-group">
+                <label for="petal_width">Petal Width</label>
+                <input type="text" class="form-control" id="petal_width" name="petal_width" placeholder="Petal Width">
+            </div>
+            <button type="submit" class="btn btn-primary">Predict</button>
+        </form>
+    </div>
+    <br>
+    <footer class="bg-dark text-center text-lg-start">
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.901); padding: 50px; color: white;">
+            <span class="text-muted" style="color: white;">Copyright &copy; 2022 | </span>
+          <a class="text-dark" style="color: white;"  href="{{ url_for('home') }}">Iris Machine Learning</a>
+        </div>
+    </footer>
+
+<!--  link bootstrap js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<!--  link js -->
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
